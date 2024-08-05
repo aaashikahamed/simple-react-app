@@ -7,10 +7,11 @@ function App() {
 
   const [ name, setName] = useState('')
   const [age, setAge] = useState('')
+  const [visible, setVisible] = useState(false);
 
-  // const changeName = () => {
-  //   setName('John')
-  // }
+  const visi = () => {
+    setVisible(true)
+  }
 
   return (
    <>
@@ -27,11 +28,11 @@ function App() {
         <input type='number'  onChange={(e) => setAge(e.target.value)}  style={{margin:'5px'}}/> 
       </div>
 
-      {/* <button onClick={changeName}>Submit</button> */}
+      <button onClick={visi}>Submit</button>
     </div>
 
     <div className='App'>
-      <h1>My name is {name} and I am {age} years old.</h1>
+      {visible &&( <h1>My name is {name} and I am {age} years old.</h1>)}
     </div>
    </>
   );
